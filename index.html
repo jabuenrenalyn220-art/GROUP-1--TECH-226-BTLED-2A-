@@ -1,41 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Home</title>
+<title>Welcome</title>
 
-  <style>
-    body {
-      background: url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd53');
-      background-size: cover;
-      text-align: center;
-      font-family: Arial;
-      color: white;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
 
-    h1 {
-      margin-top: 100px;
-      font-size: 40px;
-    }
+  background: url("bipsu.jpg") no-repeat center center/cover;
+  height: 100vh;
+}
 
-    .btn {
-      margin-top: 50px;
-      padding: 15px 30px;
-      font-size: 20px;
-      background: gold;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-  </style>
+/* DARK OVERLAY */
+.overlay {
+  background: rgba(0,0,0,0.5);
+  height: 100vh;
+  position: relative;
+}
+
+/* WELCOME TEXT (CENTER) */
+.welcome {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 40px;
+  text-align: center;
+
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* BUTTON LEFT CENTER */
+.btn-container {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+}
+
+/* BUTTON STYLE */
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+
+  border: none;
+  border-radius: 30px;
+
+  background: linear-gradient(45deg, gold, orange);
+  color: black;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+  box-shadow: 0 0 15px gold;
+}
+
+/* HOVER EFFECT */
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px orange;
+}
+
+/* ANIMATION TEXT */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translate(-50%, -70%);}
+  to {opacity: 1; transform: translate(-50%, -50%);}
+}
+</style>
+
 </head>
 
 <body>
 
-  <h1>WELCOME TO OUR WEBSITE</h1>
+<!-- MUSIC -->
+<audio autoplay loop hidden>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-  <a href="group1.html">
-    <button class="btn">GROUP 1</button>
-  </a>
+<div class="overlay">
+
+  <!-- WELCOME TEXT -->
+  <div class="welcome">
+    WELCOME TO GROUP 1
+  </div>
+
+  <!-- BUTTON LEFT -->
+  <div class="btn-container">
+    <a href="group1.html">
+      <button>ENTER</button>
+    </a>
+  </div>
+
+</div>
 
 </body>
 </html>
