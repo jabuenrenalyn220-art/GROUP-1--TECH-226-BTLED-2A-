@@ -1,77 +1,181 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Renalyn Jabuen</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Aly - Renalyn Jabuen</title>
 
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: #f4f4f4;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+}
 
-    .box {
-      background: white;
-      padding: 20px;
-      margin: 50px auto;
-      width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px gray;
-    }
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px;
+}
 
-    img {
-      width: 150px;
-      border-radius: 10px;
-    }
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
 
-    button {
-      margin-top: 10px;
-      padding: 10px;
-      background: gold;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-  </style>
+/* TITLE */
+h1 {
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+/* BRAND TITLE */
+.brand {
+  color: #f9d423;
+  margin-top: 10px;
+}
+
+/* LOGO */
+.logo {
+  width: 120px;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+/* SECTION */
+.section {
+  margin-top: 30px;
+}
+
+/* TEXT */
+.text {
+  line-height: 1.6;
+  text-align: justify;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* IMAGE */
+.promo {
+  width: 220px;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+/* VIDEO */
+iframe {
+  width: 100%;
+  max-width: 450px;
+  height: 250px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+/* BUTTON */
+.back-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 25px;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #f9d423, #ff4e50);
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
 </head>
 
 <body>
 
-  <div class="content">
- 
-    <h1>Renalyn Jabuen</h1>
-    <p>This is my project.</p>
-    
-  <h2> MAISON ALY </h2>
-    <center>
-         <img src="logo1.jpg" width="300"> 
-    </center>
-    <h3>About Maison Aly Clothes</h3>
-     <p>
-     The Maison Aly Clothes logo represents elegance, creativity, and personal identity. The name “Aly” is inspired by the owner’s name, Renalyn, giving the brand a meaningful and personal touch. 
-     The design features a hanger integrated within a house shape, symbolizing both fashion and comfort—clothing that feels like home. 
-     The gold color reflects sophistication, quality, and timeless style, while the overall design highlights the brand’s focus on clothing as a passion-driven business.
-     Maison Aly Clothes stands as a reflection of love for fashion, blending style, identity, and purpose.
-     
-   </p>
-    <div style="text-align:center;">
-         <img src="picture2.jpg" width="300">
-    </div>
-    
-   <div style="text-align:center;">
-      
-     <iframe width ="500" height="300"
-     src="https://www.youtube.com/embed/quJqSu00Se4"
-     frameborder="0" allowfullscreen>
-  
-     </iframe>
-    </div>
- 
+<div class="container">
+  <div class="card">
 
-    <a href="group1.html">
-      <button>⬅ Back</button>
-    </a>
+    <h1>Renalyn Jabuen</h1>
+    <div class="subtitle">Project Presentation</div>
+
+    <h2 class="brand">MAISON ALY CLOTHES</h2>
+
+    <img src="logo1.jpg" class="logo">
+
+    <!-- ABOUT -->
+    <div class="section">
+      <h2>About</h2>
+      <p class="text">
+        The Maison Aly Clothes logo represents elegance, creativity, and personal identity. 
+        The name “Aly” is inspired by the owner’s name, Renalyn, giving the brand a meaningful 
+        and personal touch. The design features a hanger integrated within a house shape, 
+        symbolizing both fashion and comfort—clothing that feels like home. The gold color 
+        reflects sophistication, quality, and timeless style, while the overall design highlights 
+        the brand’s focus on clothing as a passion-driven business.
+      </p>
+    </div>
+
+    <!-- VISION -->
+    <div class="section">
+      <h2>Vision</h2>
+      <p class="text">
+        Maison Aly Clothes envisions becoming a trusted and inspiring clothing brand 
+        that represents elegance, creativity, and individuality, bringing confidence 
+        and comfort to every person.
+      </p>
+    </div>
+
+    <!-- MISSION -->
+    <div class="section">
+      <h2>Mission</h2>
+      <p class="text">
+        Our mission is to provide high-quality, stylish, and affordable clothing that 
+        reflects personal identity while promoting comfort, creativity, and confidence 
+        in every design.
+      </p>
+    </div>
+
+    <!-- PROMO -->
+    <div class="section">
+      <h2>Sample Design</h2>
+      <img src="picture2.jpg" class="promo">
+    </div>
+
+    <!-- VIDEO -->
+    <div class="section">
+      <h2>Presentation Video</h2>
+      <iframe src="https://youtube.com/shorts/quJqSu00Se4?si=BElvksakklc13oRe"></iframe>
+    </div>
+
+    <a href="group1.html" class="back-btn">← Back</a>
+
   </div>
+</div>
 
 </body>
 </html>
