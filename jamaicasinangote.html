@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jamaica Sinangote</title>
+<title>Jamaica Delicacies</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -12,25 +12,40 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg,#fff8e1,#ffe0b2);
+  background: #fffaf0;
   color: #333;
-  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* FLOATING CIRCLES */
+.circle {
+  position: fixed;
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: float 8s infinite ease-in-out;
+}
+
+.c1 { width: 200px; height: 200px; background: orange; top: 10%; left: 5%; }
+.c2 { width: 150px; height: 150px; background: gold; bottom: 10%; right: 10%; }
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(30px); }
+  100% { transform: translateY(0); }
 }
 
 /* NAVBAR */
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 20px 60px;
+  padding: 20px 50px;
   background: white;
   position: sticky;
   top: 0;
   box-shadow: 0 3px 15px rgba(0,0,0,0.1);
 }
 
-nav h2 {
-  color: #ff9800;
-}
+nav h2 { color: #ff9800; }
 
 nav a {
   margin-left: 20px;
@@ -45,19 +60,32 @@ nav a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg,#ffe0b2,#fff3e0);
+  background: linear-gradient(135deg,#ff9800,#ffcc80);
+  color: white;
 }
 
 .hero h1 {
-  font-size: 60px;
+  font-size: 65px;
+  animation: fadeIn 2s ease;
 }
 
+.hero p {
+  animation: fadeIn 3s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+/* BUTTON */
 .btn {
   padding: 12px 30px;
-  background: #ff9800;
+  background: white;
+  color: #ff9800;
   border-radius: 30px;
-  color: white;
   text-decoration: none;
+  font-weight: bold;
 }
 
 /* SECTION */
@@ -70,72 +98,75 @@ nav a {
   color: #ff9800;
 }
 
-.text {
+/* ABOUT CARD */
+.about {
   max-width: 800px;
   margin: auto;
-  line-height: 1.8;
-}
-
-/* FLEX */
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-}
-
-.flex img {
-  width: 300px;
-  border-radius: 20px;
-}
-
-/* BOX */
-.box {
-  max-width: 350px;
   background: white;
-  padding: 20px;
+  padding: 30px;
   border-radius: 20px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
+
+.logo {
+  width: 180px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+/* SPLIT */
+.split {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  flex: 1;
+  padding: 40px;
+  color: white;
+}
+
+.vision { background: #ff9800; }
+.mission { background: #ffa726; }
 
 /* GALLERY */
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
   gap: 20px;
 }
 
-.card {
-  width: 250px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+.grid img {
+  width: 100%;
+  border-radius: 15px;
+  transition: 0.3s;
 }
 
-.card img {
-  width: 100%;
+.grid img:hover {
+  transform: scale(1.1);
 }
 
 /* VIDEO */
 iframe {
   width: 90%;
   max-width: 600px;
-  height: 350px;
+  height: 320px;
   border-radius: 20px;
 }
 
-/* BACK BUTTON */
-.back-btn {
-  display: inline-block;
-  margin: 40px 0;
-  padding: 12px 30px;
-  border-radius: 30px;
+/* BACK FLOAT */
+.back {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.back a {
+  padding: 12px 25px;
   background: #ff9800;
   color: white;
+  border-radius: 30px;
   text-decoration: none;
-  font-weight: bold;
 }
 
 /* FOOTER */
@@ -143,18 +174,7 @@ footer {
   background: #ff9800;
   color: white;
   padding: 20px;
-}
-
-/* ANIMATION */
-.fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 1s;
-}
-
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
+  text-align: center;
 }
 </style>
 
@@ -162,14 +182,16 @@ footer {
 
 <body>
 
-<!-- NAVBAR -->
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+
+<!-- NAV -->
 
 <nav>
   <h2>Delicacies</h2>
   <div>
     <a href="#about">About</a>
     <a href="#vision">Vision</a>
-    <a href="#mission">Mission</a>
     <a href="#gallery">Gallery</a>
   </div>
 </nav>
@@ -179,7 +201,7 @@ footer {
 <section class="hero">
   <div>
     <h1>Jamaica Sinangote</h1>
-    <p>Delicious. Crispy. Local.</p>
+    <p>Crunchy. Tasty. Local.</p>
     <br>
     <a href="#about" class="btn">Explore</a>
   </div>
@@ -187,85 +209,62 @@ footer {
 
 <!-- ABOUT -->
 
-<section id="about" class="section fade">
+<section id="about" class="section">
   <h2>About</h2>
-  <div class="flex">
-    <img src="logojam.jpg">
-    <p class="text">
-      Cassava chips are delicious and crispy snacks made from freshly harvested cassava. 
-      These delicacies are carefully prepared to ensure quality, taste, and satisfaction. 
-      It represents local pride and supports community-based products.
+  <div class="about">
+    <img src="logojam.jpg" class="logo">
+    <p>
+      Cassava chips are crispy snacks made from fresh cassava. 
+      Carefully prepared to bring delicious flavor and perfect crunch, 
+      representing local pride and quality.
     </p>
   </div>
 </section>
 
-<!-- VISION & MISSION -->
+<!-- VISION MISSION -->
 
-<section id="vision" class="section fade">
-  <h2>Vision & Mission</h2>
-
-  <div class="flex">
-    <div class="box">
-      <h3>Vision</h3>
-      <p>
-        To become a trusted and well-loved cassava chip brand known for quality, taste, and community support.
-      </p>
-    </div>
-
-```
-<div class="box" id="mission">
-  <h3>Mission</h3>
-  <p>
-    To provide affordable, high-quality cassava chips made from local ingredients while supporting farmers and promoting local products.
-  </p>
-</div>
-```
-
+<div class="split">
+  <div class="box vision">
+    <h2>Vision</h2>
+    <p>To be a trusted delicacy brand loved for its taste and quality.</p>
   </div>
-</section>
+
+  <div class="box mission" id="vision">
+    <h2>Mission</h2>
+    <p>To provide affordable, high-quality cassava chips while supporting local farmers.</p>
+  </div>
+</div>
 
 <!-- GALLERY -->
 
-<section id="gallery" class="section fade">
+<section id="gallery" class="section">
   <h2>Collection</h2>
   <div class="grid">
-    <div class="card"><img src="posterjam.jpg"></div>
-    <div class="card"><img src="posterjam.jpg"></div>
-    <div class="card"><img src="posterjam.jpg"></div>
+    <img src="posterjam.jpg">
+    <img src="posterjam.jpg">
+    <img src="posterjam.jpg">
   </div>
 </section>
 
 <!-- VIDEO -->
 
-<section class="section fade">
+<section class="section">
   <h2>Showcase</h2>
   <iframe src="https://www.youtube.com/embed/quJqSu00Se4"></iframe>
 </section>
 
 <!-- BACK -->
 
-<div style="text-align:center;">
-  <a href="group1.html" class="back-btn">← Back</a>
+<div class="back">
+  <a href="group1.html">← Back</a>
 </div>
 
 <!-- FOOTER -->
 
 <footer>
-  <p>© 2026 Jamaica Sinangote | Delicacies</p>
+  <p>© 2026 Jamaica Delicacies</p>
 </footer>
-
-<script>
-const faders = document.querySelectorAll('.fade');
-
-window.addEventListener('scroll', () => {
-  faders.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add('show');
-    }
-  });
-});
-</script>
 
 </body>
 </html>
+
