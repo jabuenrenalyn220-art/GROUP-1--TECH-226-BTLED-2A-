@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -6,175 +6,88 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jamaica Delicacies</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #fffaf0;
-  color: #333;
   overflow-x: hidden;
 }
 
-/* FLOATING CIRCLES */
-.circle {
-  position: fixed;
-  border-radius: 50%;
-  opacity: 0.2;
-  animation: float 8s infinite ease-in-out;
-}
-
-.c1 { width: 200px; height: 200px; background: orange; top: 10%; left: 5%; }
-.c2 { width: 150px; height: 150px; background: gold; bottom: 10%; right: 10%; }
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(30px); }
-  100% { transform: translateY(0); }
-}
-
-/* NAVBAR */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 50px;
-  background: white;
-  position: sticky;
-  top: 0;
-  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-}
-
-nav h2 { color: #ff9800; }
-
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #333;
-}
-
-/* HERO */
-.hero {
+/* SECTION FULL SCREEN */
+.section {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg,#ff9800,#ffcc80);
-  color: white;
+  padding: 20px;
 }
 
-.hero h1 {
-  font-size: 65px;
-  animation: fadeIn 2s ease;
-}
+/* COLORS */
+.hero { background: linear-gradient(135deg,#ff5722,#ff9800); color: white; }
+.about { background: #fff3e0; }
+.vision { background: #ff7043; color: white; }
+.mission { background: #ffa726; color: white; }
+.gallery { background: #fff; }
+.video { background: #ffe0b2; }
 
-.hero p {
-  animation: fadeIn 3s ease;
-}
+/* TEXT */
+h1 { font-size: 60px; }
+h2 { margin-bottom: 15px; }
 
-@keyframes fadeIn {
-  from {opacity:0;}
-  to {opacity:1;}
-}
-
-/* BUTTON */
-.btn {
-  padding: 12px 30px;
-  background: white;
-  color: #ff9800;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* SECTION */
-.section {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.section h2 {
-  color: #ff9800;
-}
-
-/* ABOUT CARD */
-.about {
-  max-width: 800px;
-  margin: auto;
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-
+/* IMAGE */
 .logo {
   width: 180px;
   border-radius: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  transition: 0.3s;
 }
 
-/* SPLIT */
-.split {
-  display: flex;
-  flex-wrap: wrap;
+.logo:hover {
+  transform: scale(1.1);
 }
-
-.box {
-  flex: 1;
-  padding: 40px;
-  color: white;
-}
-
-.vision { background: #ff9800; }
-.mission { background: #ffa726; }
 
 /* GALLERY */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .grid img {
-  width: 100%;
+  width: 200px;
   border-radius: 15px;
   transition: 0.3s;
 }
 
 .grid img:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 /* VIDEO */
 iframe {
   width: 90%;
-  max-width: 600px;
-  height: 320px;
-  border-radius: 20px;
+  max-width: 500px;
+  height: 280px;
 }
 
-/* BACK FLOAT */
+/* BACK BUTTON FLOAT */
 .back {
   position: fixed;
-  bottom: 20px;
+  top: 20px;
   left: 20px;
 }
 
 .back a {
-  padding: 12px 25px;
-  background: #ff9800;
-  color: white;
-  border-radius: 30px;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 20px;
   text-decoration: none;
-}
-
-/* FOOTER */
-footer {
-  background: #ff9800;
-  color: white;
-  padding: 20px;
-  text-align: center;
+  color: #ff5722;
+  font-weight: bold;
 }
 </style>
 
@@ -182,89 +95,72 @@ footer {
 
 <body>
 
-<div class="circle c1"></div>
-<div class="circle c2"></div>
-
-<!-- NAV -->
-
-<nav>
-  <h2>Delicacies</h2>
-  <div>
-    <a href="#about">About</a>
-    <a href="#vision">Vision</a>
-    <a href="#gallery">Gallery</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-
-<section class="hero">
-  <div>
-    <h1>Jamaica Sinangote</h1>
-    <p>Crunchy. Tasty. Local.</p>
-    <br>
-    <a href="#about" class="btn">Explore</a>
-  </div>
-</section>
-
-<!-- ABOUT -->
-
-<section id="about" class="section">
-  <h2>About</h2>
-  <div class="about">
-    <img src="logojam.jpg" class="logo">
-    <p>
-      Cassava chips are crispy snacks made from fresh cassava. 
-      Carefully prepared to bring delicious flavor and perfect crunch, 
-      representing local pride and quality.
-    </p>
-  </div>
-</section>
-
-<!-- VISION MISSION -->
-
-<div class="split">
-  <div class="box vision">
-    <h2>Vision</h2>
-    <p>To be a trusted delicacy brand loved for its taste and quality.</p>
-  </div>
-
-  <div class="box mission" id="vision">
-    <h2>Mission</h2>
-    <p>To provide affordable, high-quality cassava chips while supporting local farmers.</p>
-  </div>
-</div>
-
-<!-- GALLERY -->
-
-<section id="gallery" class="section">
-  <h2>Collection</h2>
-  <div class="grid">
-    <img src="posterjam.jpg">
-    <img src="posterjam.jpg">
-    <img src="posterjam.jpg">
-  </div>
-</section>
-
-<!-- VIDEO -->
-
-<section class="section">
-  <h2>Showcase</h2>
-  <iframe src="https://www.youtube.com/embed/quJqSu00Se4"></iframe>
-</section>
-
 <!-- BACK -->
 
 <div class="back">
   <a href="group1.html">← Back</a>
 </div>
 
-<!-- FOOTER -->
+<!-- HERO -->
 
-<footer>
-  <p>© 2026 Jamaica Delicacies</p>
-</footer>
+<div class="section hero">
+  <div>
+    <h1>Jamaica Sinangote</h1>
+    <p>Crunchy. Delicious. Local.</p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+
+<div class="section about">
+  <div>
+    <img src="logojam.jpg" class="logo">
+    <h2>About</h2>
+    <p>
+      Cassava chips are crispy snacks made from fresh cassava, bringing flavor and joy in every bite.
+    </p>
+  </div>
+</div>
+
+<!-- VISION -->
+
+<div class="section vision">
+  <div>
+    <h2>Vision</h2>
+    <p>To be a trusted snack brand loved by many.</p>
+  </div>
+</div>
+
+<!-- MISSION -->
+
+<div class="section mission">
+  <div>
+    <h2>Mission</h2>
+    <p>To create quality, affordable cassava chips while supporting local farmers.</p>
+  </div>
+</div>
+
+<!-- GALLERY -->
+
+<div class="section gallery">
+  <div>
+    <h2>Collection</h2>
+    <div class="grid">
+      <img src="posterjam.jpg">
+      <img src="posterjam.jpg">
+      <img src="posterjam.jpg">
+    </div>
+  </div>
+</div>
+
+<!-- VIDEO -->
+
+<div class="section video">
+  <div>
+    <h2>Showcase</h2>
+    <iframe src="https://www.youtube.com/embed/quJqSu00Se4"></iframe>
+  </div>
+</div>
 
 </body>
 </html>
-
