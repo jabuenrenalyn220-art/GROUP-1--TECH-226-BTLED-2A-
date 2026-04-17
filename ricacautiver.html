@@ -1,250 +1,277 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Rica Cautiver</title>
+!DOCTYPE html>
 
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: #f4f4f4;
-    }
-
-    .box {
-      background: white;
-      padding: 20px;
-      margin: 50px auto;
-      width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px gray;
-    }
-
-    img {
-      width: 150px;
-      border-radius: 10px;
-    }
-
-    button {
-      margin-top: 10px;
-      padding: 10px;
-      background: gold;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="box">
-    <img src="rica.jpg" width="150">
-    <h2>Rica Cautiver</h2>
-    <p>This is my project.</p>
-
-    <a href="group1.html">
-      <button>⬅ Back</button>
-    </a>
-  </div>
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Maeflora</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
-  font-family: 'Georgia', serif;
-  background: #0a0a0a;
-  color: #f5f5f5;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg,#fff5f7,#e6f7ff);
+  color: #333;
+  scroll-behavior: smooth;
 }
 
-/* HEADER */
-.header {
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  background: white;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+nav h2 {
+  color: #d4af37;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 40px 20px;
+  background: linear-gradient(135deg,#ffe4e1,#dff6ff);
 }
 
-.header h1 {
-  font-size: 40px;
-  letter-spacing: 3px;
+.hero h1 {
+  font-size: 65px;
 }
 
-.brand {
-  color: gold;
+.hero p {
   font-size: 18px;
 }
 
-/* CONTAINER */
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
+.btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #d4af37;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-/* CARD */
-.card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,215,0,0.2);
-  border-radius: 15px;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0 0 30px rgba(255,215,0,0.1);
-}
-
-/* LOGO */
-.logo {
-  width: 250px;
-  margin: 20px 0;
-  border-radius: 10px;
+.btn:hover {
+  transform: scale(1.1);
 }
 
 /* SECTION */
 .section {
-  margin-top: 30px;
+  padding: 80px 20px;
+  text-align: center;
 }
 
 .section h2 {
-  color: gold;
-  letter-spacing: 2px;
+  color: #d4af37;
+  margin-bottom: 20px;
 }
 
-/* TEXT */
 .text {
-  line-height: 1.7;
-  text-align: justify;
-  max-width: 700px;
+  max-width: 850px;
   margin: auto;
+  line-height: 1.9;
 }
 
-/* IMAGE */
-.promo {
+/* FLEX */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.flex img {
   width: 300px;
-  border-radius: 10px;
-  margin-top: 15px;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.flex img:hover {
+  transform: scale(1.05);
+}
+
+/* BOX */
+.box {
+  max-width: 400px;
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* GALLERY */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
   transition: 0.3s;
 }
 
-.promo:hover {
-  transform: scale(1.05);
+.card img {
+  width: 100%;
+}
+
+.card:hover {
+  transform: translateY(-10px);
 }
 
 /* VIDEO */
 iframe {
-  width: 100%;
-  max-width: 450px;
-  height: 250px;
-  border-radius: 10px;
-  margin-top: 20px;
+  width: 90%;
+  max-width: 600px;
+  height: 350px;
+  border-radius: 20px;
 }
 
-/* BUTTON */
-.back-btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 10px 25px;
-  border-radius: 25px;
-  background: gold;
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+/* FOOTER */
+footer {
+  background: #d4af37;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-.back-btn:hover {
-  background: white;
-  transform: scale(1.1);
+/* ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
 }
 
-/* FADE ANIMATION */
-.card {
-  animation: fadeUp 1s ease;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
+
 </head>
 
 <body>
 
-<div class="header">
-  <h1>Rica Mae Cautiver</h1>
-  <div class="brand">LA MAEFLORA</div>
-</div>
+<!-- NAVBAR -->
 
-<div class="container">
-  <div class="card">
+<nav>
+  <h2>La Maeflora</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#vision">Vision</a>
+    <a href="#mission">Mission</a>
+    <a href="#gallery">Gallery</a>
+  </div>
+</nav>
 
-    <img src="2 logo .jpg" class="logo">
+<!-- HERO -->
 
-    <!-- ABOUT -->
-    <div class="section">
-      <h2>About</h2>
-      <p class="text">
-        The La Maeflora logo is designed to represent beauty, elegance, and the meaningful emotions that flowers bring to people. At the center of the logo is a graceful lily flower, 
-        which symbolizes purity, love, and new beginnings. The lily reflects the idea that flowers can express feelings that words sometimes cannot, 
-        making them perfect for special occasions such as birthdays, anniversaries, celebrations, and expressions of gratitude.
-        Surrounding the flower are green leaves that represent nature, freshness, and growth. These elements highlight the natural beauty of flowers and the importance of providing 
-        fresh and vibrant floral arrangements. The leaves also symbolize life and positivity, which flowers bring to both the giver and the receiver.
-        The circular shape of the logo represents unity, completeness, and harmony. It shows how flowers connect people and strengthen relationships through meaningful gestures. 
-        The decorative petal-like shapes at the bottom add a soft and artistic touch, symbolizing the spreading of beauty and happiness through every bouquet.
-        The elegant script of the name La Maeflora reflects creativity and sophistication, giving the logo a graceful and professional appearance. Overall, the logo represents a flower 
-        business that values natural beauty, heartfelt expression, and the joy that flowers bring to every special moment. 
-      </p
-    </div>
+<section class="hero">
+  <div>
+    <h1>La Maeflora</h1>
+    <p>Beauty. Emotions. Flowers.</p>
+    <a href="#about" class="btn">Explore</a>
+  </div>
+</section>
 
-    <!-- VISION -->
-    <div class="section">
-      <h2>Vision</h2>
-      <p class="text">
-        Maison Aly Clothes envisions becoming a trusted and inspiring clothing brand 
-        that represents elegance, creativity, and individuality, bringing confidence 
-        and comfort to every person.
+<!-- ABOUT -->
+
+<section id="about" class="section fade">
+  <h2>About</h2>
+  <div class="flex">
+    <img src="2 logo .jpg">
+    <p class="text">
+      The La Maeflora logo represents beauty, elegance, and meaningful emotions. 
+      The lily flower symbolizes purity, love, and new beginnings, while the leaves represent growth and freshness. 
+      It reflects how flowers connect people and express feelings in every special moment.
+    </p>
+  </div>
+</section>
+
+<!-- VISION & MISSION -->
+
+<section id="vision" class="section fade">
+  <h2>Vision & Mission</h2>
+
+  <div class="flex">
+    <div class="box">
+      <h3>Vision</h3>
+      <p>
+        To become a well-known floral brand that spreads happiness, beauty, and emotional connection through flowers.
       </p>
     </div>
 
-    <!-- MISSION -->
-    <div class="section">
-      <h2>Mission</h2>
-      <p class="text">
-         To provide high-quality, stylish, and affordable clothing that 
-        reflects personal identity while promoting comfort, creativity, and confidence 
-        in every design.
-      </p>
-    </div>
-
-    <!-- IMAGE -->
-    <div class="section">
-      <h2>Collection</h2>
-      <img src="posterrica.jpg" class="promo">
-    </div>
-  
+```
+<div class="box" id="mission">
+  <h3>Mission</h3>
+  <p>
+    To create fresh, elegant, and meaningful floral arrangements that bring joy, express emotions, and celebrate life’s moments.
+  </p>
 </div>
-    <!-- VIDEO -->
-    <div class="section">
-      <h2>SHOWCASE</h2>
-      <iframe src="https://www.youtube.com/embed/OtoHWeuIc8k">
-        
-      </iframe>
-    </div>
-
-    <a href="group1.html" class="back-btn">← Back</a>
+```
 
   </div>
-</div>
+</section>
 
-</body>
-</html>
+<!-- GALLERY -->
+
+<section id="gallery" class="section fade">
+  <h2>Collection</h2>
+  <div class="grid">
+    <div class="card"><img src="posterrica.jpg"></div>
+    <div class="card"><img src="posterrica.jpg"></div>
+    <div class="card"><img src="posterrica.jpg"></div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+
+<section class="section fade">
+  <h2>Showcase</h2>
+  <iframe src="https://www.youtube.com/embed/OtoHWeuIc8k"></iframe>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <p>© 2026 La Maeflora | Rica Mae Cautiver</p>
+</footer>
+
+<script>
+/* SCROLL ANIMATION */
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add('show');
+    }
+  });
+});
+</script>
+
 </body>
 </html>
