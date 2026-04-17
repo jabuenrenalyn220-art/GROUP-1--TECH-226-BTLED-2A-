@@ -120,4 +120,169 @@
 
 </body>
 </html>
+You sent
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Group 1 Members</title>
 
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* BACKGROUND */
+body {
+  background: radial-gradient(circle at top, #0f2027, #000000);
+  color: white;
+  text-align: center;
+}
+
+/* TITLE */
+h1 {
+  margin-top: 40px;
+  font-size: 45px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px cyan;
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+/* CARD */
+.card {
+  width: 230px;
+  height: 320px;
+  border-radius: 20px;
+  background: #111;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+  box-shadow: 0 0 20px rgba(0,255,255,0.2);
+}
+
+/* NEON BORDER EFFECT */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(45deg, cyan, magenta, yellow);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* HOVER EFFECT */
+.card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px cyan;
+}
+
+/* IMAGE */
+.card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 25px;
+  border: 3px solid cyan;
+}
+
+/* NAME */
+.name {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: cyan;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 12px 30px;
+  border-radius: 25px;
+  background: linear-gradient(45deg, cyan, magenta);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 15px cyan;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ANIMATION */
+.card {
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>GROUP 1 MEMBERS</h1>
+
+<div class="container">
+
+  <div class="card">
+    <img src="edelyn.jpg">
+    <div class="name">Edelyn</div>
+  </div>
+
+  <div class="card">
+    <img src="jamaica.jpg">
+    <div class="name">Jamaica</div>
+  </div>
+
+  <div class="card">
+    <img src="jomari.jpg">
+    <div class="name">Jomari</div>
+  </div>
+
+  <a href="renalynjabuen.html">
+    <div class="card">
+      <img src="renalyn.jpg">
+      <div class="name">Renalyn</div>
+    </div>
+  </a>
+
+  <div class="card">
+    <img src="rica.jpg">
+    <div class="name">Rica</div>
+  </div>
+
+</div>
+
+<a href="index.html" class="back-btn">← Back</a>
+
+</body>
+</html>
