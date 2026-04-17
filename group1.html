@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Team</title>
+<title>Group 1 Members</title>
 
 <style>
 
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -15,57 +14,19 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* HERO VIDEO SECTION */
-.hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.bg-video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.overlay-dark {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-}
-
-.hero-text {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  top: 40%;
+/* BACKGROUND */
+body {
+  background: radial-gradient(circle at top, #0f2027, #000000);
   color: white;
-}
-
-.hero-text h1 {
-  font-size: 50px;
-  background: linear-gradient(45deg, cyan, magenta);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.hero-text p {
-  margin-top: 10px;
-  color: #ccc;
-}
-
-/* TEAM SECTION */
-.team {
-  background: #0a0f1c;
-  padding: 60px 20px;
   text-align: center;
 }
 
-.team h2 {
-  font-size: 35px;
-  margin-bottom: 40px;
+/* TITLE */
+h1 {
+  margin-top: 40px;
+  font-size: 45px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px cyan;
 }
 
 /* CONTAINER */
@@ -73,70 +34,90 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 40px;
+  margin-top: 60px;
 }
 
 /* CARD */
 .card {
-  width: 250px;
+  width: 230px;
   height: 320px;
-  border-radius: 15px;
-  overflow: hidden;
+  border-radius: 20px;
+  background: #111;
   position: relative;
-  cursor: pointer;
+  overflow: hidden;
   transition: 0.4s;
+  box-shadow: 0 0 20px rgba(0,255,255,0.2);
+}
+
+/* NEON BORDER EFFECT */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(45deg, cyan, magenta, yellow);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* HOVER EFFECT */
+.card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px cyan;
 }
 
 /* IMAGE */
 .card img {
-  width: 100%;
-  height: 100%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
   object-fit: cover;
+  margin-top: 25px;
+  border: 3px solid cyan;
 }
 
-/* OVERLAY */
-.overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 20px;
-  opacity: 0;
-  transition: 0.4s;
-}
-
-.card:hover .overlay {
-  opacity: 1;
-}
-
+/* NAME */
 .name {
-  font-size: 20px;
+  margin-top: 20px;
+  font-size: 18px;
   font-weight: bold;
+  color: cyan;
 }
 
-.card:hover {
-  transform: scale(1.05);
-}
-
-/* BUTTON */
-.btn {
-  margin-top: 30px;
-  padding: 12px 25px;
+/* BACK BUTTON */
+.back-btn {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 12px 30px;
   border-radius: 25px;
   background: linear-gradient(45deg, cyan, magenta);
   color: white;
   text-decoration: none;
-  display: inline-block;
+  font-weight: bold;
+  box-shadow: 0 0 15px cyan;
+  transition: 0.3s;
 }
 
-/* RESPONSIVE */
-@media(max-width: 768px){
-  .hero-text h1 {
-    font-size: 30px;
+.back-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ANIMATION */
+.card {
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -145,60 +126,40 @@
 
 <body>
 
-<!-- HERO VIDEO -->
-<div class="hero">
+<h1>GROUP 1 MEMBERS</h1>
 
-  <video autoplay muted loop class="bg-video">
-    <source src="video.mp4" type="video/mp4">
-  </video>
+<div class="container">
 
-  <div class="overlay-dark"></div>
+  <div class="card">
+    <img src="edelyn.jpg">
+    <div class="name">Edelyn</div>
+  </div>
 
-  <div class="hero-text">
-    <h1>Welcome to Our Team</h1>
-    <p>Creative minds. Strong future.</p>
-    <a href="#team" class="btn">Meet Us</a>
+  <div class="card">
+    <img src="jamaica.jpg">
+    <div class="name">Jamaica</div>
+  </div>
+
+  <div class="card">
+    <img src="jomari.jpg">
+    <div class="name">Jomari</div>
+  </div>
+
+  <a href="renalynjabuen.html">
+    <div class="card">
+      <img src="renalyn.jpg">
+      <div class="name">Renalyn</div>
+    </div>
+  </a>
+
+  <div class="card">
+    <img src="rica.jpg">
+    <div class="name">Rica</div>
   </div>
 
 </div>
 
-<!-- TEAM SECTION -->
-<div class="team" id="team">
-
-  <h2>Our Members</h2>
-
-  <div class="container">
-
-    <div class="card">
-      <img src="edelyn.jpg">
-      <div class="overlay"><div class="name">Edelyn</div></div>
-    </div>
-
-    <div class="card">
-      <img src="jamaica.jpg">
-      <div class="overlay"><div class="name">Jamaica</div></div>
-    </div>
-
-    <div class="card">
-      <img src="jomari.jpg">
-      <div class="overlay"><div class="name">Jomari</div></div>
-    </div>
-
-    <a href="renalynjabuen.html">
-      <div class="card">
-        <img src="renalyn.jpg">
-        <div class="overlay"><div class="name">Renalyn</div></div>
-      </div>
-    </a>
-
-    <div class="card">
-      <img src="rica.jpg">
-      <div class="overlay"><div class="name">Rica</div></div>
-    </div>
-
-  </div>
-
-</div>
+<a href="index.html" class="back-btn">← Back</a>
 
 </body>
 </html>
