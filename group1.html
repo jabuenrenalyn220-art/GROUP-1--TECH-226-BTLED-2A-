@@ -13,12 +13,21 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* BACKGROUND */
+/* 🌈 AUTO CHANGING BACKGROUND */
 body {
-  background: linear-gradient(135deg, #0f2027, #203a43, #000);
+  background: linear-gradient(-45deg, #0f2027, #203a43, #000000, #00c6ff);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
   color: white;
   text-align: center;
   overflow-x: hidden;
+  transition: 0.5s;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
 
 /* TITLE */
@@ -53,7 +62,7 @@ h1 {
   box-shadow: 0 0 25px rgba(0,255,255,0.15);
 }
 
-/* BORDER GLOW */
+/* BORDER */
 .card::before {
   content: "";
   position: absolute;
@@ -88,7 +97,7 @@ h1 {
   color: cyan;
 }
 
-/* RIPPLE CLICK */
+/* RIPPLE */
 .card::after {
   content: "";
   position: absolute;
@@ -126,7 +135,7 @@ h1 {
   transform: scale(1.1);
 }
 
-/* FADE OUT */
+/* FADE */
 .fade-out {
   animation: fadeOut 0.4s forwards;
 }
@@ -135,22 +144,6 @@ h1 {
   to {
     opacity: 0;
     transform: scale(1.1);
-  }
-}
-
-/* ENTRY ANIMATION */
-.card {
-  animation: fadeInUp 0.8s ease;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 </style>
@@ -162,27 +155,27 @@ h1 {
 
 <div class="container">
 
-  <div class="card" onclick="goToPage('edelynchochesa.html')">
+  <div class="card" onclick="goToPage('edelynchochesa.html','#ff6a00')">
     <img src="edelyn.jpg">
     <div class="name">Edelyn</div>
   </div>
 
-  <div class="card" onclick="goToPage('jamaicasinangote.html')">
+  <div class="card" onclick="goToPage('jamaicasinangote.html','#8e2de2')">
     <img src="jamaica.jpg">
     <div class="name">Jamaica</div>
   </div>
 
-  <div class="card" onclick="goToPage('jomarisingzon.html')">
+  <div class="card" onclick="goToPage('jomarisingzon.html','#00c6ff')">
     <img src="jomari.jpg">
     <div class="name">Jomari</div>
   </div>
 
-  <div class="card" onclick="goToPage('renalynjabuen.html')">
+  <div class="card" onclick="goToPage('renalynjabuen.html','#ff0080')">
     <img src="renalyn.jpg">
     <div class="name">Renalyn</div>
   </div>
 
-  <div class="card" onclick="goToPage('ricacautiver.html')">
+  <div class="card" onclick="goToPage('ricacautiver.html','#00ff87')">
     <img src="rica.jpg">
     <div class="name">Rica</div>
   </div>
@@ -192,11 +185,15 @@ h1 {
 <a href="index.html" class="back-btn">← Back</a>
 
 <script>
-function goToPage(link, soundFile) {
-  let sound = new Audio(soundFile);
+function goToPage(link, color) {
 
-  sound.play();
+  // 🎨 change background based sa member
+  document.body.style.background = color;
 
+  // remove animation para dili mag conflict
+  document.body.style.animation = "none";
+
+  // fade effect
   document.body.classList.add("fade-out");
 
   setTimeout(() => {
