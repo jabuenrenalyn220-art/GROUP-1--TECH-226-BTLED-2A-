@@ -13,16 +13,16 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* 🌈 AUTO BACKGROUND */
+/* 🌈 ANIMATED BACKGROUND */
 body {
   background: linear-gradient(-45deg, #0f2027, #203a43, #000000, #00c6ff);
   background-size: 400% 400%;
-  animation: gradientBG 12s ease infinite;
+  animation: bgMove 12s ease infinite;
   color: white;
   text-align: center;
 }
 
-@keyframes gradientBG {
+@keyframes bgMove {
   0% {background-position: 0% 50%;}
   50% {background-position: 100% 50%;}
   100% {background-position: 0% 50%;}
@@ -45,15 +45,18 @@ h1 {
   margin-top: 60px;
 }
 
-/* CARD */
+/* CARD FIXED LAYOUT */
 .card {
   width: 240px;
   height: 320px;
   border-radius: 20px;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(10px);
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 25px;
   transition: 0.3s;
   cursor: pointer;
   box-shadow: 0 0 25px rgba(0,255,255,0.15);
@@ -70,7 +73,7 @@ h1 {
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
 }
 
-/* HOVER EFFECT */
+/* HOVER */
 .card:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 0 40px cyan;
@@ -81,13 +84,13 @@ h1 {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  margin-top: 25px;
+  object-fit: cover;
   border: 3px solid cyan;
 }
 
 /* NAME */
 .name {
-  margin-top: 20px;
+  margin-top: 25px;
   font-size: 18px;
   font-weight: bold;
   color: cyan;
@@ -189,7 +192,7 @@ function stopSound() {
 }
 
 function goToPage(link) {
-  stopSound(); // stop sound on click
+  stopSound();
   document.body.classList.add("fade-out");
 
   setTimeout(() => {
