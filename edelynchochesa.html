@@ -4,105 +4,219 @@
   <title>Edelyn Chochesa</title>
 
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
     body {
-      font-family: Arial;
+      min-height: 100vh;
+      background: linear-gradient(-45deg, #ff758c, #ff7eb3, #6a11cb, #2575fc);
+      background-size: 400% 400%;
+      animation: bgMove 10s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes bgMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .container {
+      width: 90%;
+      max-width: 900px;
+      backdrop-filter: blur(15px);
+      background: rgba(255,255,255,0.1);
+      border-radius: 25px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      color: white;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* HEADER */
+    .header {
       text-align: center;
-      background: #f4f4f4;
+      margin-bottom: 30px;
+    }
+
+    .profile {
+      width: 130px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 10px;
+      transition: 0.3s;
+    }
+
+    .profile:hover {
+      transform: scale(1.1);
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .logo {
+      width: 100px;
+      margin-top: 10px;
+    }
+
+    /* GRID SECTIONS */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
 
     .box {
-      background: white;
+      background: rgba(255,255,255,0.15);
       padding: 20px;
-      margin: 50px auto;
-      width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px gray;
+      border-radius: 15px;
+      transition: 0.3s;
     }
 
-    img {
-      width: 150px;
+    .box:hover {
+      transform: translateY(-5px) scale(1.02);
+      background: rgba(255,255,255,0.25);
+    }
+
+    .box h2 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      border-bottom: 2px solid white;
+      padding-bottom: 5px;
+    }
+
+    .text {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .promo {
+      width: 100%;
       border-radius: 10px;
     }
 
-    button {
-      margin-top: 10px;
-      padding: 10px;
-      background: gold;
+    iframe {
+      width: 100%;
+      height: 180px;
+      border-radius: 10px;
       border: none;
-      border-radius: 10px;
-      cursor: pointer;
     }
+
+    /* FULL WIDTH SECTION */
+    .full {
+      grid-column: span 2;
+    }
+
+    /* BUTTON */
+    .btn {
+      display: block;
+      margin: 25px auto 0;
+      padding: 12px 25px;
+      border-radius: 30px;
+      border: none;
+      background: white;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: gold;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .full {
+        grid-column: span 1;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
-  <div class="box">
-    <img src="edelyn.jpg" width="150"
-    <h2>Edelyn Chochesa</h2>
-    <p>THE HEARTY POT.</p>
-
-
 <div class="container">
-  <div class="card">
 
+  <!-- HEADER -->
+  <div class="header">
+    <img src="edelyn.jpg" class="profile">
+    <div class="title">Edelyn Chochesa</div>
+    <div class="subtitle">THE HEARTY POT</div>
     <img src="logo edelyn.jpg" class="logo">
+  </div>
 
-    <!-- ABOUT -->
-    <div class="section">
+  <!-- CONTENT -->
+  <div class="grid">
+
+    <div class="box">
       <h2>About</h2>
       <p class="text">
-         My logo represents a food brand that focuses on warm, comforting meals. 
-        The bowl symbolizes a pot of hearty food served to customers. The steam 
-        rising from the bowl shows that the food is freshly cooked and hot. The 
-        flame represents the cooking process and passion for preparing delicious 
-        meals. The chef’s hat symbolizes professionalism and skill in cooking. 
-        Lastly, the heart beside the brand name represents love and dedication 
-        in serving food to customers.
+        My logo represents a food brand that focuses on warm, comforting meals. 
+        The bowl symbolizes hearty food, steam shows freshness, and the flame 
+        reflects passion in cooking. The chef hat represents professionalism, 
+        while the heart symbolizes love in every meal served.
       </p>
     </div>
 
-    <!-- VISION -->
-    <div class="section">
+    <div class="box">
       <h2>Vision</h2>
       <p class="text">
-         To be a favorite destination for comforting and budget-friendly meals 
-        where families, friends, and students can enjoy food that feels like home.
-
+        To become a trusted destination for affordable and comforting meals 
+        where people feel at home.
       </p>
     </div>
 
-    <!-- MISSION -->
-    <div class="section">
+    <div class="box">
       <h2>Mission</h2>
       <p class="text">
-        To provide tasty, freshly cooked meals at affordable prices while offering 
-        warm and friendly service. We strive to create a cozy space where customers 
-        can relax, enjoy good food, and feel welcomed every time they visit.
+        To serve delicious meals with care, provide great service, and create 
+        a warm and welcoming space for everyone.
       </p>
     </div>
 
-    <!-- IMAGE -->
-    <div class="section">
+    <div class="box">
       <h2>Collection</h2>
-      <img src="poster edelyn" class="promo">
+      <img src="poster edelyn.jpg" class="promo">
     </div>
 
-    <!-- VIDEO -->
-    <div class="section">
+    <div class="box full">
       <h2>Showcase</h2>
       <iframe src="https://www.youtube.com/embed/quJqSu00Se4"></iframe>
     </div>
 
-
-
-
-
-    
-    <a href="group1.html">
-      <button>⬅ Back</button>
-    </a>
   </div>
+
+  <!-- BUTTON -->
+  <a href="group1.html">
+    <button class="btn">⬅ Back</button>
+  </a>
+
+</div>
 
 </body>
 </html>
